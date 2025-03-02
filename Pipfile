@@ -1,0 +1,35 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[pipenv]
+install_search_all_sources = true
+
+[dev-packages]
+
+[packages]
+sphinx = ">=4"
+flask = "*"
+jinja2 = "*"
+markupsafe = "*"
+pygments = "*"
+sqlalchemy = "*"
+werkzeug = "*"
+docutils = "*"
+flup = "*"
+gevent = "*"
+greenlet = "*"
+gunicorn = "*"
+heroku = "==0.1.4"
+itsdangerous = "*"
+pdfrw = "*"
+python-dateutil = "*"
+redis = "*"
+reportlab = "*"
+requests = "*"
+rst2pdf = "*"
+sphinxcontrib-websupport = "*"
+
+# [requires]
+# python_version = "2.7"

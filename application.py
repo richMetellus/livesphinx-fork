@@ -2,8 +2,9 @@
 # all the imports
 
 import os, sys
+from importlib import reload
+import wsgiref
 reload(sys)
-sys.setdefaultencoding('utf-8')
 
 from flask import Flask, request, render_template, make_response, url_for
 

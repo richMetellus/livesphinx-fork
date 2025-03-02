@@ -27,12 +27,12 @@ class RstedDaemon(BaseDaemon):
     
     def print_status(self):
         pidexists = os.path.exists(self.pidfile)
-        print "Pidfile (%s) exists:" % self.pidfile, ('Yes' if pidexists else 'No')
+        print("Pidfile (%s) exists:" % self.pidfile, ('Yes' if pidexists else 'No'))
         if pidexists:
             pid = self.readpid()
             count = int(os.popen("ps --pid %d --no-heading| wc -l" % pid).read().strip())
             running = count > 0
-            print "Running: %s" % ('Yes' if running else 'No')
+            print("Running: %s" % ('Yes' if running else 'No'))
 
     def is_running(self):
         pidexists = os.path.exists(self.pidfile)

@@ -3,13 +3,13 @@ import os
 import shutil
 import tempfile
 
-from sphinx.websupport import WebSupport
+from sphinxcontrib.websupport import WebSupport
 
 @contextlib.contextmanager
 def mkdtemp(suffix='', prefix='tmp', parent_dir=None):
     path = tempfile.mkdtemp(suffix, prefix, parent_dir)
     try:
-        yield unicode(path)
+        yield str(path)
     finally:
         shutil.rmtree(path, ignore_errors=True)
 
@@ -22,8 +22,8 @@ def magic_convert_function(text):
 
             support = WebSupport(srcdir=indir,
                                  builddir=outdir)
-            print "Building Sphinx at %s & %s" % (indir, outdir)
-            print "Current dir: %s" % os.listdir(indir)
+            print("Building Sphinx at %s & %s" % (indir, outdir))
+            print("Current dir: %s" % os.listdir(indir))
             support.build()
             contents = support.get_document('index')
             return contents['body']

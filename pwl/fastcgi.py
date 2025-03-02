@@ -154,7 +154,7 @@ def runfastcgi(app, argset=[], **kwargs):
                 return super(WSGIServer, self)._spawnChild(sock)
 
     except:
-        print "Can't import flup." + flup_module
+        print("Can't import flup." + flup_module)
         return False
 
     if options['host'] and options['port'] and not options['socket']:
