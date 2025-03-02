@@ -17,7 +17,7 @@ def magic_convert_function(text):
     with mkdtemp() as outdir:
         with mkdtemp() as indir:
             shutil.copy('conf.py', indir)
-            with open(os.path.join(indir, 'index.rst'), 'w') as infile:
+            with open(os.path.join(indir, 'index.rst'), 'w', encoding='utf-8') as infile:
                 infile.write(text)
 
             support = WebSupport(srcdir=indir,
